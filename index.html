@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="js/react.development.js"></script>
+    <script crossorigin src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+    <link rel="stylesheet" href="js/style.css">
+    <title>COVID TRACKER</title>
+</head>
+<body>
+    <h3>COVID TRACKER</h3>
+    <table>
+        <thead>
+            <th>NO</th>
+           <th>COUNTRY</th>
+           <th>CONFIRMED </th>
+           <th> DEATH</th>
+           <th>RECOVERED</th>
+           <th>ACTIVE</th>
+           
+        </thead>
+       <tbody id="root"></tbody>
+    </table>
+    <script type="text/jsx">
+       
+       const data =   [{id:1, country:"Brazil", confirmed:"105857", death:"3345", recovered:"88937", active:"13575"},
+                        {id:2, country:"Colombia", confirmed:"2565", death:"104", recovered:"2365", active:"96"},
+                        {id:3, country:"Peru", confirmed:"6831", death:"125", recovered:"0", active:"6706"},
+                        {id:4, country:"Russia", confirmed:"2909", death:"47", recovered:"2293", active:"569"},
+                        {id:5, country:"Peru", confirmed:"13453", death:"875", recovered:"0", active:"12578"},
+                        {id:6, country:"Spain", confirmed:"16618", death:"1438", recovered:"10671", active:"4509"},
+                        {id:7, country:"India", confirmed:"1222", death:"19", recovered:"425", active:"778"},
+                        {id:8, country:"Colombia", confirmed:"331", death:"7", recovered:"163", active:"161"},
+                        {id:9, country:"Chile", confirmed:"4344", death:"82", recovered:"3980", active:"282"},
+                        {id:10, country:"Peru", confirmed:"18190", death:"869", recovered:"0", active:"17321"} ]
+
+    
+    
+    function RowData(props){
+        console.log(props)
+        return (
+                
+                <tr>
+                    <td>{props.id}</td>
+                    <td>{props.country}</td>
+                    <td>{props.confirmed}</td>
+                    <td> {props.death}</td>
+                    <td>{props.recovered}</td>
+                    <td>{props.active}</td>
+                  </tr>
+           
+              
+        );
+    }
+
+    let appList=data.map(i=> <RowData key={i.id}  id={i.id} country={i.country} confirmed={i.confirmed} death={i.death} recovered={i.recovered} active={i.active}/>);
+    ReactDOM.render(
+        <React.StrictMode>
+        {appList}
+      </React.StrictMode>, document.getElementById ("root"));
+    </script>
+</body>
+</html>
