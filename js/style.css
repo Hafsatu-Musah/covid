@@ -6,7 +6,12 @@ table{
     border-spacing: 1.5rem;
     text-align: center;
     position: relative;
-    left: 30%;
-    
-    
+    left: 10%;
+    width: 80%    
+}
+table thead{
+    background-color: aquamarine;
+}
+td{
+    background-color: brown;
 }
